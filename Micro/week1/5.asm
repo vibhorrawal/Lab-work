@@ -1,0 +1,15 @@
+LDA 5000H
+
+MOV B,A
+
+LDA 5001H
+
+ADD B
+
+STA 6000H
+
+LDA 5000H
+
+jc 6001h
+
+hlt

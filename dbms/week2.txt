@@ -1,0 +1,124 @@
+help
+show databases;
+create database dbms
+create database dbms;
+create database dbms create database dbms;
+create database dbms;
+show databases;
+use dbms;
+show tables
+;
+show tables;
+create table newtable(id varchar(20));
+show tables;
+show databases;
+use dbms
+exit dbms
+;
+create database classwork;
+use classwork
+create table student(roll_number int primary key, name varchar(128), address varchar(128), semester varchar(128));
+create table academic_programme( programme_name varchar(128) unique, duration int, programme_code int primary key);  
+show tables
+;
+show table student
+;
+describe student
+;
+create table department( department_code int primary key, department_name int unique, hod varchar(128));
+show tables
+;
+describe academic_programme
+;
+alter table academic_programme add course1 varchar(128),course2 varchar(128), course3 varchar(128); 
+alter table academic_programme add (course1 varchar(128),course2 varchar(128), course3 varchar(128)); 
+describe academic_programme;
+show tables;
+insert into academic_programme values('Btech', 4, 101,'dbms', 'itw', 'cst');
+select * from academic_programme;
+describe student;
+rename table student as students;
+insert into student values(1001,'vibhor', 'delhi', 3);\
+select * from student;
+rename table student students;
+insert into student values(1002,'aman', 'kota', 5), (1003, 'ashish', 'roorkee', 1), (1009, 'apurv', 'kota', 9);
+select * from student;
+select name,address from student where address='kota';
+alter table student add cgpa;
+alter table student add cgpa int;
+select * from student;
+update student set cgpa=9 where roll_number=1001;
+update student set cgpa=8 where roll_number=1002;
+update student set cgpa=7 where roll_number=1003;
+update student set cgpa=6 where roll_number=1004;
+update student set cgpa=6 where roll_number=1009;
+select * from student;
+alter table student modify cgpa float;
+select * from student;
+select * from department;
+describe department;
+select name from student asc;
+help
+help select
+select name asc from student;
+select name from student order by name asc;
+history
+;
+show database
+;
+show databases;
+use classwork
+show tables;
+\h
+use classwork
+show student;
+select * from student;
+alter table student add column (Prog_code varchar(128), Reg_course int);
+select * from student;
+update student set Prog_code=9 and Reg_course=3 where roll_number=1001;
+select * from student;
+update student set Prog_code=9, Reg_course=3 where roll_number=1001;
+select * from student;
+update student set Prog_code=8, Reg_course=2 where roll_number=1002;
+update student set Prog_code=7, Reg_course=3 where roll_number=1003;
+update student set Prog_code=5, Reg_course=4 where roll_number=1004;
+update student set Prog_code=5, Reg_course=4 where roll_number=1009;
+show tables
+;
+select * from academic_programme;
+insert into academic_programme values('Mtech',2,201,'ai','edc','dl'),('Phd',1,301,'nn','pt','jk');
+select * from academic_programme;
+select * from department;
+show tables;
+describe department;
+insert into department values(101,'CSE','E101');
+select * from department;
+alter table department modify department_name varchar(128);
+update department set department_name='CSE' where hod='E101';
+select * from department;
+insert into department values(102,'ECE','E304'),(302,'EE','E402');
+select * from department;
+show tables;
+create table Teacher (Emp_code varchar(128) primary key, Name varchar(128), Department varchar(128), Designation varchar(128));
+insert into Teacher values('E101','Dr. Kishore Awasthi','CSE','HoD'),('E102','Dr. Pareek Satya','CSE','Professor'),('E302','Manoj Jain','ECE','Assistant Professor'),('E304','Dr. Hemant Aggarwal','ECE','HoD'),('E402','Dr. Smriti Jain','EE','HoD');
+use classwork
+show tables;
+select * from Student where Address="Kota";
+select * from Student where Address="kota";
+select * from student where Address="kota";
+select * from Student where CGPA>=8.5;
+select * from student where CGPA>=8.5;
+select Name,Reg_course,Semester from Student;
+select Name,Reg_course,Semester from student;
+select Name from student order by Name ASC;
+select * from student;
+update student set address='Guwahati' where roll_number=1003;
+select * from student;
+select student.semester from student Left Join academic_programme on student.programme_code=academic_programme.code AND (Academic_programme.course1='dbms' OR academic_programme.course2='dbms' OR academic_programme.course3='dbms');
+show tables;
+select student.semester from student Left Join academic_programme on student.Prog_code=academic_programme.code AND (Academic_programme.course1='dbms' OR academic_programme.course2='dbms' OR academic_programme.course3='dbms');
+describe academic_programme;
+select student.semester from student Left Join academic_programme on student.Prog_code=academic_programme.programme_code AND (Academic_programme.course1='dbms' OR academic_programme.course2='dbms' OR academic_programme.course3='dbms');
+select student.semester from student Left Join academic_programme on student.Prog_code=academic_programme.programme_code AND (academic_programme.course1='dbms' OR academic_programme.course2='dbms' OR academic_programme.course3='dbms');
+select * from academic_programme;
+select * from student;

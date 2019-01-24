@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		var pc,rc,tc,nc;
+		pc  = window.prompt("Enter Principal");
+		rc = window.prompt("Enter Rate");
+		nc = window.prompt("Enter Time");
+
+		var p,r,t,n,ci;
+		p = parseFloat(pc);
+		r = parseFloat(rc);
+		n = parseFloat(nc);
+		ci = Math.pow(p * (1 + r / 100), n);
+		document.writeln("<h2>Compound Interest is " + ci+"</h2>");
+
+	</script>
+	<title>Compound Interest</title>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+1) hex to ascii
+2)ascii to decimal
+3)BINARY TO GRAY
+4)COMPLEMENT CONTENT OF FLAG
+5)FIND min and max of array(>8)
+6)sort an array in ascending order
+7. calc fibonacci series and store at 9001h onwards 

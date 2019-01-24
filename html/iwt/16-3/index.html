@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		var pc,rc,tc,nc;
+		pc  = window.prompt("Enter P");
+		rc = window.prompt("Enter R");
+		tc = window.prompt("Enter T");
+		nc = window.prompt("Enter N");
+
+		var p,r,t,n,ci;
+		p = praseFloat(pc);
+		r = praseFloat(rc);
+		t = praseFloat(tc);
+		n = praseFloat(nc);
+		ci = p * (1 + r / 100)^t;
+		document.Write("Compound Interest is "+ci);
+
+	</script>
+	<title>Compound Interest</title>
+</head>
+<body>
+
+</body>
+</html>

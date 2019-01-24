@@ -1,0 +1,14 @@
+mvi b,0
+inr b
+stc 
+cmc
+
+mvi a,0ffh
+adi 01h
+out 01h
+
+mvi a,0ffh
+inr a
+out 01h
+
+hlt

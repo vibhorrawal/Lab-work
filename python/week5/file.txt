@@ -1,0 +1,6 @@
+t1:read(A)
+t2:write(A)
+t2:read(B)
+t3:write(B)
+t4:read(C)
+t5:write(C)

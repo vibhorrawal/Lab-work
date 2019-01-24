@@ -1,0 +1,11 @@
+print('Hello World')
+
+for i in range(4) :
+	print(i)
+
+i = input('Enter integer')
+j = input('Enter another integer : ')
+sum = i + j
+print(sum)
+sum = int(i) + int(j) + 1
+print(sum)

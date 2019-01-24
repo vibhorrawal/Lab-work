@@ -1,0 +1,14 @@
+1) WAP a program to add 2 hex numbers 7A and 46 and store sum at 98H and flags at 97H
+
+2) same ques just display at 2 different output ports
+
+3) WAP to meet following specs:
+a. initialise the stack pointer register at XX99H
+b. clear the memory location 90H to 9FH
+c. load register pair B,D and H with following data: B = 0237H, D = 1242H, H = 4087H
+d. push the contents of the register pair B,D and H on the stack
+e. execute the program and verify memory locations 90H to 9FH
+
+4) WAP to clear initial flags, load data byte FFH into accumulator and add 01H to byte FFH by using instruction ADI.
+Mask all flags except carry flag at display at port 0.
+Repeat the program by replacing the ADI instruction with INR and byte 01H with NOP instruction. Display result at port 1 and explain it

@@ -1,0 +1,7 @@
+LDA 5000H
+
+RLC
+
+STA 5000H
+
+hlt 

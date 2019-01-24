@@ -1,0 +1,36 @@
+<html ng-app="chatApp">
+<head>
+<title>Angular Demo</title>
+<script src="angular.min.js"></script>
+<script src="chat.js"> </script>
+
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCvfMp-33V5OKlN-H7o3a23ZePTwhJa7Jk",
+    authDomain: "my-awesome-project-stack.firebaseapp.com",
+    databaseURL: "https://my-awesome-project-stack.firebaseio.com",
+    projectId: "my-awesome-project-stack",
+    storageBucket: "my-awesome-project-stack.appspot.com",
+    messagingSenderId: "481875926390"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+
+</head>
+<body>
+<div ng-controller="chatCtrl as chat">
+
+    <!-- <input type="text" ng-model="chat.name"> -->
+  <input type="text" ng-model="chat.text">
+  <button ng-click="chat.send(chat.text)">Send</button>
+  <button ng-click="chat.login()">Login with Google</button>
+  
+<p ng-repeat="msg in chat.messages">
+ <ing ng-src="{{img.photo}}" alt="" width="50px"></ing>{{msg.name}}   ---   {{msg.text}}
+</p>
+</div>
+
+</body>
