@@ -1,0 +1,1227 @@
+noofbit
+{Undefined function 'log2' for input arguments of type 'char'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('noofbit', '/home/iiitk/noofbit.m', 5)" style="font-weight:bold">noofbit</a> (<a href="matlab: opentoline('/home/iiitk/noofbit.m',5,0)">line 5</a>)
+nobit=log2(n);
+} 
+noofbit
+{Undefined function 'log2' for input arguments of type 'char'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('noofbit', '/home/iiitk/noofbit.m', 5)" style="font-weight:bold">noofbit</a> (<a href="matlab: opentoline('/home/iiitk/noofbit.m',5,0)">line 5</a>)
+nobit= log2(n);
+} 
+noofbit
+{Undefined function 'log2' for input arguments of type 'char'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('noofbit', '/home/iiitk/noofbit.m', 5)" style="font-weight:bold">noofbit</a> (<a href="matlab: opentoline('/home/iiitk/noofbit.m',5,0)">line 5</a>)
+nobit= log2(n);
+} 
+noofbit
+{Undefined function 'log2' for input arguments of type 'char'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('noofbit', '/home/iiitk/noofbit.m', 5)" style="font-weight:bold">noofbit</a> (<a href="matlab: opentoline('/home/iiitk/noofbit.m',5,0)">line 5</a>)
+nobit= log2(n);
+} 
+zeros (1,5)
+
+ans =
+
+     0     0     0     0     0
+
+noofbit
+{Undefined function 'log2' for input arguments of type 'char'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('noofbit', '/home/iiitk/noofbit.m', 5)" style="font-weight:bold">noofbit</a> (<a href="matlab: opentoline('/home/iiitk/noofbit.m',5,0)">line 5</a>)
+nobit= log2(n);
+} 
+noofbit
+{Undefined function 'log2' for input arguments of type 'char'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('noofbit', '/home/iiitk/noofbit.m', 5)" style="font-weight:bold">noofbit</a> (<a href="matlab: opentoline('/home/iiitk/noofbit.m',5,0)">line 5</a>)
+nobit= log2(n);
+} 
+clc
+'
+ '
+ |
+{Error: String is not terminated properly.
+} 
+clc
+noofbit
+{Undefined function 'log2' for input arguments of type 'char'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('noofbit', '/home/iiitk/noofbit.m', 5)" style="font-weight:bold">noofbit</a> (<a href="matlab: opentoline('/home/iiitk/noofbit.m',5,0)">line 5</a>)
+nobit= log2(n);
+} 
+help log2
+ <strong>log2</strong>   Base 2 logarithm and dissect floating point number.
+    Y = <strong>log2</strong>(X) is the base 2 logarithm of the elements of X.
+ 
+    [F,E] = <strong>log2</strong>(X) for each element of the real array X, returns an
+    array F of real numbers, usually in the range 0.5 <= abs(F) < 1,
+    and an array E of integers, so that X = F .* 2.^E.  Any zeros in X
+    produce F = 0 and E = 0.  This corresponds to the ANSI C function
+    frexp() and the IEEE floating point standard function logb().
+ 
+    See also <a href="matlab:help log">log</a>, <a href="matlab:help log10">log10</a>, <a href="matlab:help pow2">pow2</a>, <a href="matlab:help nextpow2">nextpow2</a>, <a href="matlab:help realmax">realmax</a>, <a href="matlab:help realmin">realmin</a>.
+
+    Overloaded methods:
+       <a href="matlab:help sym/log2">sym/log2</a>
+       <a href="matlab:help codistributed/log2">codistributed/log2</a>
+       <a href="matlab:help gpuArray/log2">gpuArray/log2</a>
+       <a href="matlab:help fints/log2">fints/log2</a>
+
+    Reference page in Help browser
+       <a href="matlab:doc log2">doc log2</a>
+
+noofbit
+{Error: <a href="matlab: opentoline('/home/iiitk/noofbit.m',15,7)">File: noofbit.m Line: 15 Column: 7
+</a>Unexpected MATLAB expression.
+} 
+noofbit
+{Error: <a href="matlab: opentoline('/home/iiitk/noofbit.m',13,7)">File: noofbit.m Line: 13 Column: 7
+</a>"binary" previously appeared to be used as a function or command, conflicting with its use here as the
+name of a variable.
+A possible cause of this error is that you forgot to initialize the variable, or you have initialized it
+implicitly using load or eval.
+
+} 
+noofbit
+{Error: <a href="matlab: opentoline('/home/iiitk/noofbit.m',13,7)">File: noofbit.m Line: 13 Column: 7
+</a>"binaryc" previously appeared to be used as a function or command, conflicting with its use here as the
+name of a variable.
+A possible cause of this error is that you forgot to initialize the variable, or you have initialized it
+implicitly using load or eval.
+
+} 
+help keyword
+
+keyword not found.
+
+Use the Help browser search field to <a href="matlab:docsearch keyword">search the documentation</a>, or
+type "<a href="matlab:help help">help help</a>" for help command options, such as help for methods.
+
+help help
+   <strong>help</strong> Display help text in Command Window.
+      <strong>help</strong>, by itself, lists all primary help topics. Each primary topic
+      corresponds to a folder name on the MATLAB search path.
+ 
+      <strong>help</strong> NAME displays the help for the functionality specified by NAME,
+      such as a function, operator symbol, method, class, or toolbox.
+      NAME can include a partial path.
+ 
+      Some classes require that you specify the package name. Events,
+      properties, and some methods require that you specify the class
+      name. Separate the components of the name with periods, using one
+      of the following forms:
+ 
+          <strong>help</strong> CLASSNAME.NAME
+          <strong>help</strong> PACKAGENAME.CLASSNAME
+          <strong>help</strong> PACKAGENAME.CLASSNAME.NAME
+ 
+      If NAME is the name of both a folder and a function, <strong>help</strong> displays
+      help for both the folder and the function. The help for a folder
+      is usually a list of the program files in that folder.
+ 
+      If NAME appears in multiple folders on the MATLAB path, <strong>help</strong> displays
+      information about the first instance of NAME found on the path.
+ 
+      NOTE:
+ 
+      In the help, some function names are capitalized to make them 
+      stand out. In practice, type function names in lowercase. For
+      functions that are shown with mixed case (such as javaObject),
+      type the mixed case as shown.
+ 
+      EXAMPLES:
+ 
+      help close           % help for the CLOSE function
+      help database/close  % help for CLOSE in the Database Toolbox
+      help database        % list of functions in the Database Toolbox 
+                           % and help for the DATABASE function
+      help containers.Map.isKey   % help for isKey method
+ 
+      See also <a href="matlab:help doc">doc</a>, <a href="matlab:help docsearch">docsearch</a>, <a href="matlab:help lookfor">lookfor</a>, <a href="matlab:help matlabpath">matlabpath</a>, <a href="matlab:help which">which</a>.
+
+    Overloaded methods:
+       <a href="matlab:help cvtest/help">cvtest/help</a>
+       <a href="matlab:help cvdata/help">cvdata/help</a>
+       <a href="matlab:help fdesign.help">fdesign.help</a>
+
+    Reference page in Help browser
+       <a href="matlab:doc help">doc help</a>
+
+help help
+   <strong>help</strong> Display help text in Command Window.
+      <strong>help</strong>, by itself, lists all primary help topics. Each primary topic
+      corresponds to a folder name on the MATLAB search path.
+ 
+      <strong>help</strong> NAME displays the help for the functionality specified by NAME,
+      such as a function, operator symbol, method, class, or toolbox.
+      NAME can include a partial path.
+ 
+      Some classes require that you specify the package name. Events,
+      properties, and some methods require that you specify the class
+      name. Separate the components of the name with periods, using one
+      of the following forms:
+ 
+          <strong>help</strong> CLASSNAME.NAME
+          <strong>help</strong> PACKAGENAME.CLASSNAME
+          <strong>help</strong> PACKAGENAME.CLASSNAME.NAME
+ 
+      If NAME is the name of both a folder and a function, <strong>help</strong> displays
+      help for both the folder and the function. The help for a folder
+      is usually a list of the program files in that folder.
+ 
+      If NAME appears in multiple folders on the MATLAB path, <strong>help</strong> displays
+      information about the first instance of NAME found on the path.
+ 
+      NOTE:
+ 
+      In the help, some function names are capitalized to make them 
+      stand out. In practice, type function names in lowercase. For
+      functions that are shown with mixed case (such as javaObject),
+      type the mixed case as shown.
+ 
+      EXAMPLES:
+ 
+      help close           % help for the CLOSE function
+      help database/close  % help for CLOSE in the Database Toolbox
+      help database        % list of functions in the Database Toolbox 
+                           % and help for the DATABASE function
+      help containers.Map.isKey   % help for isKey method
+ 
+      See also <a href="matlab:help doc">doc</a>, <a href="matlab:help docsearch">docsearch</a>, <a href="matlab:help lookfor">lookfor</a>, <a href="matlab:help matlabpath">matlabpath</a>, <a href="matlab:help which">which</a>.
+
+    Overloaded methods:
+       <a href="matlab:help cvtest/help">cvtest/help</a>
+       <a href="matlab:help cvdata/help">cvdata/help</a>
+       <a href="matlab:help fdesign.help">fdesign.help</a>
+
+    Reference page in Help browser
+       <a href="matlab:doc help">doc help</a>
+
+help lookfor
+ <strong>lookfor</strong> Search all M-files for keyword.
+    <strong>lookfor</strong> XYZ looks for the string XYZ in the first comment line
+    (the H1 line) of the HELP text in all M-files found on MATLABPATH
+    (including private directories).  For all files in which a 
+    match occurs, <strong>lookfor</strong> displays the H1 line.
+ 
+    For example, "lookfor inverse" finds at least a dozen matches,
+    including the H1 lines containing "inverse hyperbolic cosine"
+    "two-dimensional inverse FFT", and "pseudoinverse".
+    Contrast this with "which inverse" or "what inverse", which run
+    more quickly, but which probably fail to find anything because
+    MATLAB does not ordinarily have a function "inverse".
+ 
+    <strong>lookfor</strong> XYZ -all  searches the entire first comment block of
+    each M-file.
+ 
+    In summary, WHAT lists the functions in a given directory,
+    WHICH finds the directory containing a given function or file, and
+    <strong>lookfor</strong> finds all functions in all directories that might have
+    something to do with a given key word.
+ 
+    See also <a href="matlab:help dir">dir</a>, <a href="matlab:help help">help</a>, <a href="matlab:help who">who</a>, <a href="matlab:help what">what</a>, <a href="matlab:help which">which</a>.
+
+    Reference page in Help browser
+       <a href="matlab:doc lookfor">doc lookfor</a>
+
+magic(2)
+
+ans =
+
+     1     3
+     4     2
+
+help plot
+ <strong>plot</strong>   Linear plot. 
+    <strong>plot</strong>(X,Y) plots vector Y versus vector X. If X or Y is a matrix,
+    then the vector is plotted versus the rows or columns of the matrix,
+    whichever line up.  If X is a scalar and Y is a vector, disconnected
+    line objects are created and plotted as discrete points vertically at
+    X.
+ 
+    <strong>plot</strong>(Y) plots the columns of Y versus their index.
+    If Y is complex, <strong>plot</strong>(Y) is equivalent to <strong>plot</strong>(real(Y),imag(Y)).
+    In all other uses of <strong>plot</strong>, the imaginary part is ignored.
+ 
+    Various line types, plot symbols and colors may be obtained with
+    <strong>plot</strong>(X,Y,S) where S is a character string made from one element
+    from any or all the following 3 columns:
+ 
+           b     blue          .     point              -     solid
+           g     green         o     circle             :     dotted
+           r     red           x     x-mark             -.    dashdot 
+           c     cyan          +     plus               --    dashed   
+           m     magenta       *     star             (none)  no line
+           y     yellow        s     square
+           k     black         d     diamond
+           w     white         v     triangle (down)
+                               ^     triangle (up)
+                               <     triangle (left)
+                               >     triangle (right)
+                               p     pentagram
+                               h     hexagram
+                          
+    For example, <strong>plot</strong>(X,Y,'c+:') plots a cyan dotted line with a plus 
+    at each data point; <strong>plot</strong>(X,Y,'bd') plots blue diamond at each data 
+    point but does not draw any line.
+ 
+    <strong>plot</strong>(X1,Y1,S1,X2,Y2,S2,X3,Y3,S3,...) combines the plots defined by
+    the (X,Y,S) triples, where the X's and Y's are vectors or matrices 
+    and the S's are strings.  
+ 
+    For example, <strong>plot</strong>(X,Y,'y-',X,Y,'go') plots the data twice, with a
+    solid yellow line interpolating green circles at the data points.
+ 
+    The <strong>plot</strong> command, if no color is specified, makes automatic use of
+    the colors specified by the axes ColorOrder property.  By default,
+    <strong>plot</strong> cycles through the colors in the ColorOrder property.  For
+    monochrome systems, <strong>plot</strong> cycles over the axes LineStyleOrder property.
+ 
+    Note that RGB colors in the ColorOrder property may differ from
+    similarly-named colors in the (X,Y,S) triples.  For example, the 
+    second axes ColorOrder property is medium green with RGB [0 .5 0],
+    while <strong>plot</strong>(X,Y,'g') plots a green line with RGB [0 1 0].
+ 
+    If you do not specify a marker type, <strong>plot</strong> uses no marker. 
+    If you do not specify a line style, <strong>plot</strong> uses a solid line.
+ 
+    <strong>plot</strong>(AX,...) plots into the axes with handle AX.
+ 
+    <strong>plot</strong> returns a column vector of handles to lineseries objects, one
+    handle per plotted line. 
+ 
+    The X,Y pairs, or X,Y,S triples, can be followed by 
+    parameter/value pairs to specify additional properties 
+    of the lines. For example, <strong>plot</strong>(X,Y,'LineWidth',2,'Color',[.6 0 0]) 
+    will create a plot with a dark red line width of 2 points.
+ 
+    Example
+       x = -pi:pi/10:pi;
+       y = tan(sin(x)) - sin(tan(x));
+       plot(x,y,'--rs','LineWidth',2,...
+                       'MarkerEdgeColor','k',...
+                       'MarkerFaceColor','g',...
+                       'MarkerSize',10)
+ 
+    See also <a href="matlab:help plottools">plottools</a>, <a href="matlab:help semilogx">semilogx</a>, <a href="matlab:help semilogy">semilogy</a>, <a href="matlab:help loglog">loglog</a>, <a href="matlab:help plotyy">plotyy</a>, <a href="matlab:help plot3">plot3</a>, <a href="matlab:help grid">grid</a>,
+    <a href="matlab:help title">title</a>, <a href="matlab:help xlabel">xlabel</a>, <a href="matlab:help ylabel">ylabel</a>, <a href="matlab:help axis">axis</a>, <a href="matlab:help axes">axes</a>, <a href="matlab:help hold">hold</a>, <a href="matlab:help legend">legend</a>, <a href="matlab:help subplot">subplot</a>, <a href="matlab:help scatter">scatter</a>.
+
+    Overloaded methods:
+       <a href="matlab:help alphaShape/plot">alphaShape/plot</a>
+       <a href="matlab:help duration/plot">duration/plot</a>
+       <a href="matlab:help datetime/plot">datetime/plot</a>
+       <a href="matlab:help timeseries/plot">timeseries/plot</a>
+       <a href="matlab:help phytree/plot">phytree/plot</a>
+       <a href="matlab:help clustergram/plot">clustergram/plot</a>
+       <a href="matlab:help HeatMap/plot">HeatMap/plot</a>
+       <a href="matlab:help fints/plot">fints/plot</a>
+       <a href="matlab:help wdectree/plot">wdectree/plot</a>
+       <a href="matlab:help ntree/plot">ntree/plot</a>
+       <a href="matlab:help dtree/plot">dtree/plot</a>
+       <a href="matlab:help LinearModel/plot">LinearModel/plot</a>
+       <a href="matlab:help wvtree/plot">wvtree/plot</a>
+       <a href="matlab:help rwvtree/plot">rwvtree/plot</a>
+       <a href="matlab:help edwttree/plot">edwttree/plot</a>
+       <a href="matlab:help sfit/plot">sfit/plot</a>
+       <a href="matlab:help cfit/plot">cfit/plot</a>
+       <a href="matlab:help channel.plot">channel.plot</a>
+       <a href="matlab:help dspdata.plot">dspdata.plot</a>
+       <a href="matlab:help iddata/plot">iddata/plot</a>
+       <a href="matlab:help idnlhw/plot">idnlhw/plot</a>
+       <a href="matlab:help idnlarx/plot">idnlarx/plot</a>
+       <a href="matlab:help mpc/plot">mpc/plot</a>
+       <a href="matlab:help frd/plot">frd/plot</a>
+
+    Reference page in Help browser
+       <a href="matlab:doc plot">doc plot</a>
+
+help sum
+ <strong>sum</strong> Sum of elements.
+    S = <strong>sum</strong>(X) is the sum of the elements of the vector X. If
+    X is a matrix, S is a row vector with the sum over each
+    column. For N-D arrays, <strong>sum</strong>(X) operates along the first
+    non-singleton dimension.
+    If X is floating point, that is double or single, S is
+    accumulated natively, that is in the same class as X,
+    and S has the same class as X. If X is not floating point,
+    S is accumulated in double and S has class double.
+ 
+    S = <strong>sum</strong>(X,DIM) sums along the dimension DIM. 
+ 
+    S = <strong>sum</strong>(X,'double') and S = <strong>sum</strong>(X,DIM,'double') accumulate
+    S in double and S has class double, even if X is single.
+ 
+    S = <strong>sum</strong>(X,'native') and S = <strong>sum</strong>(X,DIM,'native') accumulate
+    S natively and S has the same class as X.
+ 
+    S = <strong>sum</strong>(X,'default') and S = <strong>sum</strong>(X,DIM,'default') are
+    equivalent to S = <strong>sum</strong>(X) and S = <strong>sum</strong>(X,DIM) respectively.
+ 
+    Examples:
+    If   X = [0 1 2
+              3 4 5]
+ 
+    then sum(X,1) is [3 5 7] and sum(X,2) is [ 3
+                                              12];
+ 
+    If X = int8(1:20) then sum(X) accumulates in double and the
+    result is double(210) while sum(X,'native') accumulates in
+    int8, but overflows and saturates to int8(127).
+ 
+    See also <a href="matlab:help prod">prod</a>, <a href="matlab:help cumsum">cumsum</a>, <a href="matlab:help diff">diff</a>, <a href="matlab:help accumarray">accumarray</a>, <a href="matlab:help isfloat">isfloat</a>.
+
+    Overloaded methods:
+       <a href="matlab:help duration/sum">duration/sum</a>
+       <a href="matlab:help timeseries/sum">timeseries/sum</a>
+       <a href="matlab:help sym/sum">sym/sum</a>
+       <a href="matlab:help codistributed/sum">codistributed/sum</a>
+       <a href="matlab:help gpuArray/sum">gpuArray/sum</a>
+
+    Reference page in Help browser
+       <a href="matlab:doc sum">doc sum</a>
+
+help mod
+ <strong>mod</strong>    Modulus after division.
+    <strong>mod</strong>(x,y) is x - n.*y where n = floor(x./y) if y ~= 0.  If y is not an
+    integer and the quotient x./y is within roundoff error of an integer,
+    then n is that integer.  The inputs x and y must be real arrays of the
+    same size, or real scalars.
+ 
+    The statement "x and y are congruent mod m" means mod(x,m) == mod(y,m).
+ 
+    By convention:
+       <strong>mod</strong>(x,0) is x.
+       <strong>mod</strong>(x,x) is 0.
+       <strong>mod</strong>(x,y), for x~=y and y~=0, has the same sign as y.
+ 
+    Note: REM(x,y), for x~=y and y~=0, has the same sign as x.
+    <strong>mod</strong>(x,y) and REM(x,y) are equal if x and y have the same sign, but
+    differ by y if x and y have different signs.
+ 
+    See also <a href="matlab:help rem">rem</a>.
+
+    Overloaded methods:
+       <a href="matlab:help sym/mod">sym/mod</a>
+       <a href="matlab:help codistributed/mod">codistributed/mod</a>
+       <a href="matlab:help gpuArray/mod">gpuArray/mod</a>
+
+    Reference page in Help browser
+       <a href="matlab:doc mod">doc mod</a>
+
+help axis
+ <strong>axis</strong>  Control axis scaling and appearance.
+    <strong>axis</strong>([XMIN XMAX YMIN YMAX]) sets scaling for the x- and y-axes
+       on the current plot.
+    <strong>axis</strong>([XMIN XMAX YMIN YMAX ZMIN ZMAX]) sets the scaling for the
+       x-, y- and z-axes on the current 3-D plot.
+    <strong>axis</strong>([XMIN XMAX YMIN YMAX ZMIN ZMAX CMIN CMAX]) sets the
+       scaling for the x-, y-, z-axes and color scaling limits on
+       the current axis (see CAXIS). 
+    V = <strong>axis</strong> returns a row vector containing the scaling for the
+       current plot.  If the current view is 2-D, V has four
+       components; if it is 3-D, V has six components.
+ 
+    <strong>axis</strong> AUTO  returns the axis scaling to its default, automatic
+       mode where, for each dimension, 'nice' limits are chosen based
+       on the extents of all line, surface, patch, and image children.
+    <strong>axis</strong> MANUAL  freezes the scaling at the current limits, so that if
+       HOLD is turned on, subsequent plots will use the same limits.
+    <strong>axis</strong> TIGHT  sets the axis limits to the range of the data.
+    <strong>axis</strong> FILL  sets the axis limits and PlotBoxAspectRatio so that
+       the axis fills the position rectangle.  This option only has
+       an effect if PlotBoxAspectRatioMode or DataAspectRatioMode are
+       manual.
+ 
+    <strong>axis</strong> IJ  puts MATLAB into its "matrix" axes mode.  The coordinate
+       system origin is at the upper left corner.  The i axis is
+       vertical and is numbered from top to bottom.  The j axis is
+       horizontal and is numbered from left to right.
+    <strong>axis</strong> XY  puts MATLAB into its default "Cartesian" axes mode.  The
+       coordinate system origin is at the lower left corner.  The x
+       axis is horizontal and is numbered from left to right.  The y
+       axis is vertical and is numbered from bottom to top.
+ 
+    <strong>axis</strong> EQUAL  sets the aspect ratio so that equal tick mark
+       increments on the x-,y- and z-axis are equal in size. This
+       makes SPHERE(25) look like a sphere, instead of an ellipsoid.
+    <strong>axis</strong> IMAGE  is the same as <strong>axis</strong> EQUAL except that the plot
+       box fits tightly around the data.
+    <strong>axis</strong> SQUARE  makes the current axis box square in size.
+    <strong>axis</strong> NORMAL  restores the current axis box to full size and
+        removes any restrictions on the scaling of the units.
+        This undoes the effects of <strong>axis</strong> SQUARE and <strong>axis</strong> EQUAL.
+    <strong>axis</strong> VIS3D  freezes aspect ratio properties to enable rotation of
+        3-D objects and overrides stretch-to-fill.
+ 
+    <strong>axis</strong> OFF  turns off all axis labeling, tick marks and background.
+    <strong>axis</strong> ON  turns axis labeling, tick marks and background back on.
+ 
+    <strong>axis</strong>(H,...) changes the axes handles listed in vector H.
+ 
+    See also <a href="matlab:help axes">axes</a>, <a href="matlab:help grid">grid</a>, <a href="matlab:help subplot">subplot</a>, <a href="matlab:help xlim">xlim</a>, <a href="matlab:help ylim">ylim</a>, <a href="matlab:help zlim">zlim</a>.
+
+    Overloaded methods:
+       <a href="matlab:help vrjoystick/axis">vrjoystick/axis</a>
+
+    Reference page in Help browser
+       <a href="matlab:doc axis">doc axis</a>
+
+
+help str2num
+ <strong>str2num</strong> Convert string matrix to numeric array.
+    X = <strong>str2num</strong>(S) converts a character array representation of a matrix of
+    numbers to a numeric matrix. For example,
+        
+         S = ['1 2'         str2num(S) => [1 2;3 4]
+              '3 4']
+ 
+    The numbers in the string matrix S should be ASCII character
+    representations of a numeric values.  Each number may contain digits,
+    a decimal point, a leading + or - sign, an 'e' or 'd' preceding a
+    power of 10 scale factor, and an 'i' or 'j' for a complex unit.
+ 
+    If the string S does not represent a valid number or matrix,
+    <strong>str2num</strong>(S) returns the empty matrix.  [X,OK]=<strong>str2num</strong>(S) will
+    return OK=0 if the conversion failed.
+ 
+    CAUTION: <strong>str2num</strong> uses EVAL to convert the input argument, so side
+    effects can occur if the string contains calls to functions.  Use
+    STR2DOUBLE to avoid such side effects or when S contains a single
+    number.
+ 
+    Also spaces can be significant.  For instance, str2num('1+2i') and 
+    str2num('1 + 2i') produce x = 1+2i while str2num('1 +2i') produces
+    x = [1 2i].  These problems are also avoided when you use STR2DOUBLE.
+     
+    See also <a href="matlab:help str2double">str2double</a>, <a href="matlab:help num2str">num2str</a>, <a href="matlab:help hex2num">hex2num</a>, <a href="matlab:help char">char</a>.
+
+    Overloaded methods:
+       <a href="matlab:help opaque/str2num">opaque/str2num</a>
+
+    Reference page in Help browser
+       <a href="matlab:doc str2num">doc str2num</a>
+
+help long
+
+long not found.
+
+Use the Help browser search field to <a href="matlab:docsearch long">search the documentation</a>, or
+type "<a href="matlab:help help">help help</a>" for help command options, such as help for methods.
+
+help short
+
+short not found.
+
+Use the Help browser search field to <a href="matlab:docsearch short">search the documentation</a>, or
+type "<a href="matlab:help help">help help</a>" for help command options, such as help for methods.
+
+lookfor short
+<a href="matlab:help BioReadQualityStatistics">BioReadQualityStatistics</a>       - quality statistics from short-read sequences.
+<a href="matlab:help datatipinfo">datatipinfo</a>                    - Produce short description of input variable
+<a href="matlab:help simUtil_addLines">simUtil_addLines</a>               - Shortcut function to add lines
+<a href="matlab:help hdlcosim">hdlcosim</a>                       - is a shorthand interface for <a href="matlab: help  'hdlverifier.HDLCosimulation'">hdlverifier.HDLCosimulation</a>
+<a href="matlab:help dspskipblk">dspskipblk</a>                     - Replace selected blocks with a short-circuit.
+<a href="matlab:help dspblkshorttimefft2">dspblkshorttimefft2</a>            - Mask dynamic dialog function for Periodogram spectrum analysis block
+<a href="matlab:help syms">syms</a>                           - Short-cut for constructing symbolic variables.
+<a href="matlab:help hw1LevelFun">hw1LevelFun</a>                    - Compute the level function for the single factor Hull-White short rate
+<a href="matlab:help hw1TermStructure">hw1TermStructure</a>               - Compute the full term structures from the Hull-White single factor short
+<a href="matlab:help getSPCUDTInheritModesShort">getSPCUDTInheritModesShort</a>     - 
+<a href="matlab:help bowtie">bowtie</a>                         - maps short reads to a reference sequence using the Burrows-Wheeler transform.
+<a href="matlab:help joinseq">joinseq</a>                        - joins two sequences to produce the shortest supersequence.
+<a href="matlab:help ngsbrowser">ngsbrowser</a>                     - browse short-read sequence alignment.
+<a href="matlab:help graphallshortestpaths">graphallshortestpaths</a>          - finds all the shortest paths in graph.
+<a href="matlab:help graphshortestpath">graphshortestpath</a>              - solves the shortest path problem in graph.
+<a href="matlab:help fptoolcallback">fptoolcallback</a>                 - Responds to engine events in order to save the shortcuts in
+help format
+ <strong>format</strong> Set output format.
+    <strong>format</strong> with no inputs sets the output format to the default appropriate
+    for the class of the variable. For float variables, the default is
+    <strong>format</strong> SHORT.
+ 
+    <strong>format</strong> does not affect how MATLAB computations are done. Computations
+    on float variables, namely single or double, are done in appropriate
+    floating point precision, no matter how those variables are displayed. 
+    Computations on integer variables are done natively in integer. Integer
+    variables are always displayed to the appropriate number of digits for
+    the class, for example, 3 digits to display the INT8 range -128:127.
+    <strong>format</strong> SHORT and LONG do not affect the display of integer variables.
+ 
+    <strong>format</strong> may be used to switch between different output display formats
+    of all float variables as follows:
+      <strong>format</strong> SHORT     Scaled fixed point format with 5 digits.
+      <strong>format</strong> LONG      Scaled fixed point format with 15 digits for double
+                       and 7 digits for single.
+      <strong>format</strong> SHORTE    Floating point format with 5 digits.
+      <strong>format</strong> LONGE     Floating point format with 15 digits for double and
+                       7 digits for single.
+      <strong>format</strong> SHORTG    Best of fixed or floating point format with 5 
+                       digits.
+      <strong>format</strong> LONGG     Best of fixed or floating point format with 15 
+                       digits for double and 7 digits for single.
+      <strong>format</strong> SHORTENG  Engineering format that has at least 5 digits
+                       and a power that is a multiple of three
+      <strong>format</strong> LONGENG   Engineering format that has exactly 16 significant
+                       digits and a power that is a multiple of three.
+ 
+    <strong>format</strong> may be used to switch between different output display formats
+    of all numeric variables as follows:
+      <strong>format</strong> HEX     Hexadecimal format.
+      <strong>format</strong> +       The symbols +, - and blank are printed 
+                     for positive, negative and zero elements.
+                     Imaginary parts are ignored.
+      <strong>format</strong> BANK    Fixed format for dollars and cents.
+      <strong>format</strong> RAT     Approximation by ratio of small integers.  Numbers
+                     with a large numerator or large denominator are
+                     replaced by *.
+ 
+    <strong>format</strong> may be used to affect the spacing in the display of all
+    variables as follows:
+      <strong>format</strong> COMPACT Suppresses extra line-feeds.
+      <strong>format</strong> LOOSE   Puts the extra line-feeds back in.
+ 
+    Example:
+       format short, pi, single(pi)
+    displays both double and single pi with 5 digits as 3.1416 while
+       format long, pi, single(pi)
+    displays pi as 3.141592653589793 and single(pi) as 3.1415927.
+ 
+       format, intmax('uint64'), realmax
+    shows these values as 18446744073709551615 and 1.7977e+308 while
+       format hex, intmax('uint64'), realmax
+    shows them as ffffffffffffffff and 7fefffffffffffff respectively.
+    The HEX display corresponds to the internal representation of the value
+    and is not the same as the hexadecimal notation in the C programming
+    language.
+ 
+    See also <a href="matlab:help disp">disp</a>, <a href="matlab:help display">display</a>, <a href="matlab:help isnumeric">isnumeric</a>, <a href="matlab:help isfloat">isfloat</a>, <a href="matlab:help isinteger">isinteger</a>.
+
+    Reference page in Help browser
+       <a href="matlab:doc format">doc format</a>
+
+a=1;5
+
+ans =
+
+     5
+
+prod(a)
+
+ans =
+
+     1
+
+rando
+
+b =
+
+     5     5     0
+     5     5     5
+     0     0     5
+
+rando
+
+b =
+
+   255   255     0
+     0     0     0
+   255   255   255
+
+help rand
+ <strong>rand</strong> Uniformly distributed pseudorandom numbers.
+    R = <strong>rand</strong>(N) returns an N-by-N matrix containing pseudorandom values drawn
+    from the standard uniform distribution on the open interval(0,1).  <strong>rand</strong>(M,N)
+    or <strong>rand</strong>([M,N]) returns an M-by-N matrix.  <strong>rand</strong>(M,N,P,...) or
+    <strong>rand</strong>([M,N,P,...]) returns an M-by-N-by-P-by-... array.  <strong>rand</strong> returns a
+    scalar.  <strong>rand</strong>(SIZE(A)) returns an array the same size as A.
+ 
+    Note: The size inputs M, N, P, ... should be nonnegative integers.
+    Negative integers are treated as 0.
+ 
+    R = <strong>rand</strong>(..., CLASSNAME) returns an array of uniform values of the 
+    specified class. CLASSNAME can be 'double' or 'single'.
+ 
+    R = <strong>rand</strong>(..., 'like', Y) returns an array of uniform values of the 
+    same class as Y.
+ 
+    The sequence of numbers produced by <strong>rand</strong> is determined by the settings of
+    the uniform random number generator that underlies <strong>rand</strong>, RANDI, and RANDN.
+    Control that shared random number generator using RNG.
+ 
+    Examples:
+ 
+       Example 1: Generate values from the uniform distribution on the
+       interval [a, b].
+          r = a + (b-a).*rand(100,1);
+ 
+       Example 2: Use the RANDI function, instead of <strong>rand</strong>, to generate
+       integer values from the uniform distribution on the set 1:100.
+          r = randi(100,1,5);
+ 
+       Example 3: Reset the random number generator used by <strong>rand</strong>, RANDI, and
+       RANDN to its default startup settings, so that <strong>rand</strong> produces the same
+       random numbers as if you restarted MATLAB.
+          rng('default')
+          rand(1,5)
+ 
+       Example 4: Save the settings for the random number generator used by
+       <strong>rand</strong>, RANDI, and RANDN, generate 5 values from <strong>rand</strong>, restore the
+       settings, and repeat those values.
+          s = rng
+          u1 = rand(1,5)
+          rng(s);
+          u2 = rand(1,5) % contains exactly the same values as u1
+ 
+       Example 5: Reinitialize the random number generator used by <strong>rand</strong>,
+       RANDI, and RANDN with a seed based on the current time.  <strong>rand</strong> will
+       return different values each time you do this.  NOTE: It is usually
+       not necessary to do this more than once per MATLAB session.
+          rng('shuffle');
+          rand(1,5)
+ 
+    See <a href="matlab:helpview([docroot '\techdoc\math\math.map'],'update_random_number_generator')">Updating Your Random Number Generator Syntax</a> to use RNG to replace
+    <strong>rand</strong> with the 'seed', 'state', or 'twister' inputs.
+ 
+    See also <a href="matlab:help randi">randi</a>, <a href="matlab:help randn">randn</a>, <a href="matlab:help rng">rng</a>, <a href="matlab:help RandStream">RandStream</a>, <a href="matlab:help RandStream/rand">RandStream/rand</a>,
+             <a href="matlab:help sprand">sprand</a>, <a href="matlab:help sprandn">sprandn</a>, <a href="matlab:help randperm">randperm</a>.
+
+    Overloaded methods:
+       <a href="matlab:help RandStream/rand">RandStream/rand</a>
+       <a href="matlab:help distributed/rand">distributed/rand</a>
+       <a href="matlab:help codistributor2dbc/rand">codistributor2dbc/rand</a>
+       <a href="matlab:help codistributor1d/rand">codistributor1d/rand</a>
+       <a href="matlab:help codistributed/rand">codistributed/rand</a>
+       <a href="matlab:help gpuArray/rand">gpuArray/rand</a>
+
+    Reference page in Help browser
+       <a href="matlab:doc rand">doc rand</a>
+
+rando
+
+b =
+
+  202.0129    9.1065  173.0775
+  244.6706  216.5280  193.2237
+  167.2139  238.1683  189.4988
+
+rando
+
+b =
+
+   100   180    12
+   167     8    25
+    44    71   210
+
+rando
+
+b =
+
+   177     9   195
+    81   112   203
+   242    97    48
+
+rando
+
+b =
+
+   125   181   173
+   114   192   167
+   165    70    41
+
+rando
+
+b =
+
+    30    87   192
+   127   149    65
+   245    57   129
+
+rando
+
+b =
+
+   178   140    66
+   227    35   214
+   245    38    65
+
+rando
+
+b =
+
+   208    89   157
+    62    50   121
+   237    64    90
+
+rando
+
+b =
+
+   212   234   192
+   149    73    97
+   140   193   145
+
+rando
+
+b =
+
+    19   199   145
+    14   238   120
+   135    33     3
+
+rando
+
+b =
+
+    86    79   154
+    41   135    67
+   203    42   167
+
+rando
+
+b =
+
+   176    21    39
+   191    58   211
+   115   233   137
+
+rando
+
+b =
+
+   254    27   198
+    20   245   208
+   113     1   222
+
+rando
+
+b =
+
+    22   204    46
+   102   110    67
+    66   232    37
+
+rando
+
+b =
+
+    35   140   159
+   222    37    89
+   148   218   131
+
+rando
+
+b =
+
+   102    31   106
+    19    47    13
+    61    61   230
+
+rando
+
+b =
+
+   241    86    28
+   125   230   199
+   125    94    99
+
+rando
+
+b =
+
+    62    34   147
+   103   240    15
+    25   244    60
+
+rando
+
+b =
+
+    90    11   187
+   209    43   165
+     4   166   115
+
+rando
+
+b =
+
+   139    48    94
+    76   175   160
+   190    47   199
+
+rando
+
+b =
+
+    21   124    78
+   237   111   130
+   198   114   130
+
+rando
+
+b =
+
+   208    97    89
+   203   207   239
+   164   136   223
+
+rando
+
+b =
+
+   140    53    59
+   159    77   215
+   150   120    50
+
+rando
+
+b =
+
+    58   111   110
+    44    79    47
+    58   235   231
+
+rando
+
+b =
+
+   250    66    67
+   112   104   154
+    28   152   181
+
+rando
+
+b =
+
+    57    81    22
+    30   108    67
+    76   130   204
+
+rando
+
+b =
+
+     7   125   117
+   237   148   246
+   186    61   139
+
+rando
+
+b =
+
+   133   159    94
+    59   173   252
+   125   101    10
+
+rando
+
+b =
+
+   226    25   173
+   233    67    35
+   203    86   184
+
+rando
+
+b =
+
+    27   199   227
+   167   182    85
+   126   230   178
+
+rando
+
+b =
+
+    50   128   156
+     8   122   158
+   190   231   219
+
+rando
+
+b =
+
+   205    61   125
+   147   226    43
+    47     7   250
+
+aa=magic(5)
+
+aa =
+
+    17    24     1     8    15
+    23     5     7    14    16
+     4     6    13    20    22
+    10    12    19    21     3
+    11    18    25     2     9
+
+b= aa(1:1:3)
+
+b =
+
+    17    23     4
+
+b= aa(5:2:5)
+
+b =
+
+    11
+
+b= aa(1:2:5)
+
+b =
+
+    17     4    11
+
+b= aa((1:5):(2:5):5)
+
+b =
+
+    17     4    11
+
+b= aa([1,2],1:5)
+
+b =
+
+    17    24     1     8    15
+    23     5     7    14    16
+
+b= aa(:,[1,2,4])
+
+b =
+
+    17    24     8
+    23     5    14
+     4     6    20
+    10    12    21
+    11    18     2
+
+progra
+{Error: <a href="matlab: opentoline('/home/iiitk/Vibhor/progra.m',4,22)">File: progra.m Line: 4 Column: 22
+</a>Expression or statement is incorrect--possibly unbalanced (, {, or [.
+} 
+progra
+{Error: <a href="matlab: opentoline('/home/iiitk/Vibhor/progra.m',4,22)">File: progra.m Line: 4 Column: 22
+</a>Expression or statement is incorrect--possibly unbalanced (, {, or [.
+} 
+progra
+
+x =
+
+   182    15    18
+   128   174   133
+   120    11    25
+
+progra
+
+x =
+
+   209    38   248
+   208   168   165
+   184   132   204
+
+progra
+
+x =
+
+   116    21   100
+   110    34   212
+   210    44   205
+
+progra
+{Error: <a href="matlab: opentoline('/home/iiitk/Vibhor/progra.m',5,11)">File: progra.m Line: 5 Column: 11
+</a>The expression to the left of the equals sign is not a valid target for an assignment.
+} 
+progra
+{Error: <a href="matlab: opentoline('/home/iiitk/Vibhor/progra.m',5,1)">File: progra.m Line: 5 Column: 1
+</a>At least one END is missing: the statement may begin here.
+} 
+progra
+{Error: <a href="matlab: opentoline('/home/iiitk/Vibhor/progra.m',5,1)">File: progra.m Line: 5 Column: 1
+</a>At least one END is missing: the statement may begin here.
+} 
+untitled9
+
+x =
+
+    15   106    74
+   102   167   110
+   134   160     4
+
+{Undefined function 'a' for input arguments of type 'double'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('untitled9', '/home/iiitk/untitled9.m', 5)" style="font-weight:bold">untitled9</a> (<a href="matlab: opentoline('/home/iiitk/untitled9.m',5,0)">line 5</a>)
+a(1,1)
+} 
+untitled9
+
+x =
+
+   251    95    87
+    43    51   243
+    27   125   235
+
+
+ans =
+
+   251
+
+progra
+{Error: <a href="matlab: opentoline('/home/iiitk/Vibhor/progra.m',5,1)">File: progra.m Line: 5 Column: 1
+</a>At least one END is missing: the statement may begin here.
+} 
+progra
+
+a =
+
+    13   108   107
+   188   140   251
+    69   240    77
+
+
+a =
+
+     0   108   107
+   188   140   251
+    69   240    77
+
+progra
+
+a =
+
+   179   178    33
+   170   170   255
+   137    45    44
+
+
+a =
+
+     1   178    33
+   170   170   255
+   137    45    44
+
+
+a =
+
+     1     1    33
+   170   170   255
+   137    45    44
+
+
+a =
+
+     1     1     0
+   170   170   255
+   137    45    44
+
+
+a =
+
+     1     1     0
+     0   170   255
+   137    45    44
+
+progra
+
+a =
+
+     8   171   117
+   143    49   250
+   225    94    40
+
+
+a =
+
+     0   171   117
+   143    49   250
+   225    94    40
+
+
+a =
+
+     0     1   117
+   143    49   250
+   225    94    40
+
+
+a =
+
+     0     1     1
+   143    49   250
+   225    94    40
+
+
+a =
+
+     0     1     1
+     1    49   250
+   225    94    40
+
+
+a =
+
+     0     1     1
+     1    49     1
+   225    94    40
+
+
+a =
+
+     0     1     1
+     1    49     1
+     1    94    40
+
+
+a =
+
+     0     1     1
+     1    49     1
+     1     1    40
+
+
+a =
+
+     0     1     1
+     1    49     1
+     1     1     0
+
+progra
+
+a =
+
+   218    49    31
+   164   109   150
+    96   123    58
+
+progra
+
+a =
+
+    98    74   210
+   149   157   251
+    64    68   186
+
+progra
+
+a =
+
+    88   231    66
+   149   224   152
+    27   209     6
+
+
+a =
+
+     0     1     0
+     0   224     0
+     0     0     0
+
+progra
+
+a =
+
+   108    46   153
+    80   108   120
+    41 
