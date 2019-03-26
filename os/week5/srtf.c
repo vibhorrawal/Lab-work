@@ -1,9 +1,9 @@
-// implementing SJF
+// implementing SRTF
 #include<stdio.h>
 #include<stdlib.h>
 #include <time.h>
 time_t t;
-clock_t start = 0; // start = clock();
+clock_t start = 0; // t = time(NULL);start = clock();
 void print_clock(){
 	printf("------------------------------------------\n Clock ticks: %ld \t Time elapsed: %lds\n------------------------------------------\n\a", clock() - start, time(NULL) - t);
 	// printf("----------------------------------------------------------------------------\n Clock ticks: %ld\t Time taken on CPU: %.3fs\t Time elapsed: %lds\n----------------------------------------------------------------------------\n\a", clock() - start, ((double)clock() - start)/ CLOCKS_PER_SEC, time(NULL) - t);
@@ -12,7 +12,7 @@ void print_clock(){
 typedef struct _process{
 int id;
 int at,bt,rt; // arrival burst remaining time
-int ct,tat,wt;
+int ct,tat,wt; // completion turnarount waiting time
 } Process;
 
 int main(int argc, char const *argv[])
@@ -20,7 +20,7 @@ int main(int argc, char const *argv[])
 	t = time(NULL);
 	start = clock();
 
-	int size,time = 0;
+	int size,time;
 	printf("How many processes?\n");
 	scanf("%d",&size);
 	Process p[size+1];
@@ -40,10 +40,9 @@ int main(int argc, char const *argv[])
 	for(time = 0; count != size; time++){
 		smallest = size;
 		for (int i = 0; i < size; ++i)
-		{
 			if(p[i].at < time && p[i].rt < p[smallest].rt && p[i].rt > 0)
 				smallest = i;
-		}
+		
 		p[smallest].rt--;
 
 		if(p[smallest].rt == 0){
@@ -55,7 +54,7 @@ int main(int argc, char const *argv[])
 
 		}
 
-	printf("******************************************\nUsing FCFS processes will have:\n------------------------------------------\nID\tAT\tBT\tCT\tTAT\tWT\n------------------------------------------\n"); 
+	printf("******************************************\nUsing SRTF processes will have:\n------------------------------------------\nID\tAT\tBT\tCT\tTAT\tWT\n------------------------------------------\n"); 
 	for (int i = 0; i < size; ++i)
 	{
 		printf("P%d\t %d\t %d\t %d\t %d\t %d\t\n", p[i].id,p[i].at,p[i].bt,p[i].ct,p[i].tat,p[i].wt);
