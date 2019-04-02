@@ -27,7 +27,7 @@ int main(int argc, char const *argv[])
 	for (count = 0, time = 0; count < size;)
 	{
 
-		cout<<pid+1<<" | ";
+		cout<<"P"<<pid+1<<" | ";
 		if(process[pid].rt < tq){
 			time += process[pid].rt;
 			process[pid].rt = 0;
