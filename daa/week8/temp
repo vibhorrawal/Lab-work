@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+void lcs(char* x,int M , char* y, int N);
+int main(int argc, char const *argv[])
+{
+	char x[50];
+	char* y;
+	int M,N;
+	// scanf("%d %s",&M, x);
+	// scanf("%d %s",&N, y);
+	cin>>x;
+	cout<<(sizeof(x)/sizeof(*x));
+	//lcs(x,M,y,N);
+	return 0;
+}
+
+void lcs(char* x, int M , char* y, int N){
+	int M = 8;
+	printf("%d\n", M);
+}
+
