@@ -11,4 +11,4 @@ pthread_t
 pthread_create
 pthread_join
 
-gcc a.c -lpthread -lrt
+gcc a.c -lpthread -lrt	
