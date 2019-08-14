@@ -1,0 +1,5 @@
+ping
+whois
+ifconfig
+netstat
+nslookup
