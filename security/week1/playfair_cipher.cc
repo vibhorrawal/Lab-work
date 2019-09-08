@@ -3,54 +3,11 @@
 #include<fstream>
 
 using namespace std;
-// Q is not there
-char key[5][5] = {'P','L','A','Y','F','I','R','E','X','M','B','C','D','G','H','K','N','O','J','S','T','U','V','W','Z'};
-void encrypt_cipher(char *o, char c1, char c2){
-  int x1 = -1, x2 = -1, y1 = -1, y2 = -1, i = 0, j = 0;
-  try_again:
-  for (i = 0; i < 5; i++)
-    for (j = 0; j < 5; j++)
-      if(c1 == key[i]){
-        x1 = i, y1 = j;
-        break;
-      }
-  for (i = 0; i < 5; i++)
-    for (j = 0; j < 5; j++)
-      if(c1 == key[i]){
-        x1 = i, y1 = j;
-        break;
-      }
-  if(x1 == -1){
-    c2 = 'X', c1 = c2;
-    goto try_again;
-  }
-
-}
-void encrypt_util(fstream out, fstream in){
-  char c1, c2;
-  char f;
-  char o[2];
-  while(in>>c1){
-    if(c1 == ' '){
-      out<<' ';
-      continue;
-    }
-    else if(c1 == '\n' || c1 == '\r'){
-      out<<'\n';
-      continue;
-    }
-
-    in>>c2;
-    if(c1 == c2)
-      c2 = 'X';
-    if(c2 == ' ' || c2 == '\n' || c2 == '\r')
-      c2 = 'X';
-
-    encrypt_cipher(o,c1,c2);
-    out<<o;
-
-  }
-}
+// J is not there
+char key[5][5] = {'P','L','A','Y','F','I','R','E','X','M','B','C','D','G','H','K','N','O','Q','S','T','U','V','W','Z'};
+// void encrypt_util(fstream out, fstream in){
+//
+// }
 void encrypt(){
   fstream out, in;
   string infile, outfile;
@@ -67,9 +24,36 @@ void encrypt(){
   if(!out){
     out.open(outfile, fstream::in | fstream::out | fstream::trunc);
   }
-  // char c1,c2;
+  char c1,c2,c;
   in >> std::noskipws;
-  encrypt_util(out,in);
+  // encrypt_util(out,in);
+  bool flag = false;
+  while(in.get(c)){
+    flag = false;
+
+    if(c == '\n' || c == '\r')
+      out<<'\n';
+    else if(c == ' ')
+      out<<' ';
+    else
+      {
+        c1 = c;
+        again:
+        if(in.get(c) == EOF) c2 = 'x';
+        if(c == '\n' || c == '\r'){
+          flag = 1;
+          goto again;
+        }
+        else if(c == ' '){
+          flag = 1;
+          goto again;
+        }
+        else c2 = c;
+        if(c1 == c2 && c2 == 'x') c2 = 'q';
+        if(c1 == c2 && c2 == 'q') c2 = 'x';
+        out<<
+      }
+  }
   in.close();
   out.close();
 }
@@ -77,6 +61,7 @@ void decrypt(){
 
 }
 void read_key(){
+  bool takenkey[25] = {0};
   fstream in;
   string infile;
   cout<<"ENTER FILE WHERE KEYS ARE STORED: ";
@@ -88,26 +73,35 @@ void read_key(){
   }
   char c;
   int i = 0;
-  for (int i = 0; i < 5; i++) {
-    for (int j = 0; j < 5; j++) {
-      in>>key[i][j];
+  for (int i = 0; i < 26; i++) takenkey[i] = 0;
+  takenkey[9] = 1;
+  while(in.get(c)){
+    if(c > 'Z' || c < 'A'){
+      continue;
     }
+    if(takenkey[c-'A'] == 1){
+      continue;
+    }
+    takenkey[c-'A'] = 1;
+    key[i/5][i%5] = c;
+    i++;
+    if(i == 25) break;
   }
+  int j = 0;
+  while(i < 25){
+      while(takenkey[j++] != 0);
+      key[i/5][i%5] = --j + 'A';
+      takenkey[j] = 1;
+      i++;
 
-  for (int i = 0; i < 5; i++) {
-    for (int j = 0; j < 5; j++) {
-      if(key[i] == key[j] && i != j){
-        cout<<"KEY INCORRECT!!";
-        return;
-      }
-    }
   }
+  cout<<"key: "; for(int i = 0; i < 25 ; i++){ cout<<key[i/5][i%5]<<' ';}cout<<endl;
 
 }
 int main(int argc, char const *argv[]){
   while(1){
     cout<<"\n\n************* MENU *******************"<<endl;
-    cout<<"(1) ENCRYPT FILE\n(2) DERYPT FILE\n(3) READ KEY \n\nchoice: ";
+    cout<<"(1) ENCRYPT FILE\n(2) DERYPT FILE\n(3) READ KEY\n(4) EXIT \n\nchoice: ";
     int choice;
     cin>>choice;
     if(choice == 1)
@@ -116,8 +110,9 @@ int main(int argc, char const *argv[]){
       decrypt();
     else if(choice == 3)
       read_key();
+    else if(choice==4)
+      return 0;
     else
     cout<<"WRONG INPUT!!\n";
   }
-  return 0;
 }

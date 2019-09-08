@@ -1,3 +1,6 @@
+// - Plain text will be in small case
+// - Cipher text will be in CAPITAL case
+// - No special symbols are allowed in Encryption/Decryption
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
@@ -28,8 +31,11 @@ void encrypt(){
       out<<'\n';
     else if(c == ' ')
       out<<' ';
-    else
-      out<<char( (c - 'A' + key)%26 + 'A');
+    else{
+      char ch = (c - 'a' + key)%26;
+      if(ch<0) ch = ch + 26;
+      out<<char( ch + 'A');
+    }
   }
   in.close();
   out.close();
@@ -64,7 +70,9 @@ void decrypt(){
     else if(c == ' ')
       out<<' ';
     else{
-        out<<char( (c - 'A' - key+26)%26 + 'A');
+      char ch = (c - 'A' - key);
+      while (ch<0) ch += 26;
+        out<<char( ch % 26 + 'a');
     }
   }
   in.close();
