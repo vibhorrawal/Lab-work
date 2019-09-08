@@ -3,10 +3,10 @@
 using namespace std;
 char key[100000];
 int key_size = 0;
-
+bool read = false;
 void encrypt(){
   srand(time(0));
-  key_size = 0;
+  if(!read) key_size = 0;
   fstream out, in;
   string infile, outfile;
   cout<<"ENTER FILE TO ENCRYPT: ";
@@ -24,6 +24,8 @@ void encrypt(){
   }
   char c;
   int k;
+  int i = 0;
+
   in >> std::noskipws;
   while(in.get(c)){
     if(c == '\n' || c == '\r')
@@ -31,7 +33,13 @@ void encrypt(){
     else if(c == ' ')
       out<<' ';
     else{
-      k = key[key_size++] = std::rand();
+      if(read){
+        k = key[i % key_size];
+        i++;
+      }
+      else{
+        k = key[key_size++] = std::rand();
+      }
       out<<char( (c ^ k));
     }
   }
@@ -49,7 +57,7 @@ void encrypt(){
   out.close();
 }
 void decrypt(){
-  fstream out, in, key;
+  fstream out, in, keyfile;
   string infile, outfile;
   cout<<"ENTER FILE TO DECRYPT: ";
   cin>>infile;
@@ -59,12 +67,13 @@ void decrypt(){
     return;
   }
   //key
-  key.open("key-otp.txt");
-  if(!key){
-    cout<<"ERROR: key does not exists!\n";
-    return;
+  if(!read){
+    keyfile.open("key-otp.txt");
+    if(!keyfile){
+      cout<<"ERROR: key does not exists!\n";
+      return;
+    }
   }
-
   cout<<"ENTER FILE TO SAVE OUTPUT TO: ";
   cin>>outfile;
   out.open(outfile);
@@ -81,7 +90,11 @@ void decrypt(){
     else if(c == ' ')
       out<<' ';
     else{
-      key.get(k);
+      if(read){
+        k = key[ i % key_size];
+        i++;
+      }
+      else keyfile.get(k);
       out<<char( (c ^ k));
     }
   }
@@ -89,21 +102,15 @@ void decrypt(){
   out.close();
 }
 void read_key(){
-  fstream in;
-  string infile;
-  cout<<"ENTER FILE WHERE KEYS ARE STORED: ";
-  cin>>infile;
-  in.open(infile);
-  if(!in){
-    cout<<"ERROR: File does not exists!\n";
-    return;
+  read = true;
+  string k;
+  cout<<"\nENTER KEY: ";
+  cin>>k;
+  for (int i = 0; i < k.length(); i++) {
+    key[i] = k[i];
   }
-  char c;
-  int i = 0;
-  in >> std::noskipws;
-  while(in.get(c)){
-    key[key_size++] = c;
-  }
+  key_size = k.length();
+  cout<<"key size: "<<key_size<<endl;
 }
 void show_key(){
   cout<<"KEY: ";
@@ -115,7 +122,7 @@ void show_key(){
 int main(int argc, char const *argv[]){
   while(1){
     cout<<"\n\n************* MENU *******************"<<endl;
-    cout<<"(1) ENCRYPT FILE\n(2) DERYPT FILE\n(3) READ KEY \n(4) SHOW KEY\n\nchoice: ";
+    cout<<"(1) ENCRYPT FILE\n(2) DERYPT FILE\n(3) INPUT KEY \n(4) SHOW KEY\n(5) EXIT\n\nchoice: ";
     int choice;
     cin>>choice;
     if(choice == 1)
@@ -126,6 +133,8 @@ int main(int argc, char const *argv[]){
       read_key();
     else if(choice == 4)
       show_key();
+    else if(choice == 5)
+      return 0;
     else{
     cout<<"WRONG INPUT!!\n";break;
     }
