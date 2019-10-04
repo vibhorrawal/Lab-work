@@ -10,6 +10,9 @@ int main(int argc, char const *argv[]){
   int x,y,r;
   cin>>x>>y>>r;
   circle(60,70,50);
+  //added width of a circle as 10
+  circle(60,70,50+10);
+  fill(60+50+5,70);
   getch();
   return 0;
 }
@@ -43,4 +46,18 @@ void circle(int x, int y, int r){
 
   }
   putpixel(x,y,WHITE);
+}
+
+//for filling the width of circle 
+void fill(int x,int y)
+{
+  if(getpixel(x,y) == BLACK )
+  {
+    putpixel(x,y,RED);
+    fill(x+1,y);
+    fill(x-1,y);
+    fill(x,y+1);
+    fill(x,y-1);
+  }
+  delay(50);
 }
