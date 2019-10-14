@@ -1,8 +1,8 @@
 #include<iostream>
 #include<fstream>
 using namespace std;
-char key[9];
-char invkey[9];
+int key[9];
+int invkey[9];
 bool is2x2 = true;
 bool isInvertible(){
   if(is2x2){
@@ -11,6 +11,43 @@ bool isInvertible(){
   else{
     return key[0]*(key[4]*key[8] - key[7]*key[5]) - key[1]*(key[3]*key[8] - key[5]*key[6]) + key[2]*(key[3]*key[7] - key[6]*key[4]);
   }
+}
+int modInverse(int a, int m)
+{
+    // a = a%m;
+    a = ((a%m)+m)%m;
+
+    for (int x=1; x<m; x++)
+       if ((a*x) % m == 1)
+          return x;
+
+    return -1;
+}
+
+void keyInverse(){
+  int detA;
+  if(is2x2){
+     detA = modInverse(key[0] * key[3] - key[1] * key[2], 26);
+    invkey[0] = ((key[3] * detA) % 26 + 26) % 26;
+    invkey[1] = ((-1 * key[1] * detA)% 26 + 26) % 26;
+    invkey[2] = ((-1 * key[2] * detA) % 26 + 26) % 26;
+    invkey[3] = ((key[0] * detA) % 26 + 26) % 26;
+  }
+  else{
+     detA = modInverse(key[0]*(key[4]*key[8] - key[7]*key[5]) - key[1]*(key[3]*key[8] - key[5]*key[6]) + key[2]*(key[3]*key[7] - key[6]*key[4]), 26);
+    invkey[0] = ((key[4] * key[8] - key[7] * key[5]) * detA % 26 + 26) % 26;
+    invkey[1] = ((key[2] * key[7] - key[1] * key[8]) * detA % 26 + 26) % 26;
+    invkey[2] = ((key[1] * key[5] - key[2] * key[4]) * detA % 26 + 26) % 26;
+    invkey[3] = ((-1 * (key[3] * key[8] - key[6] * key[5]) )* detA % 26 + 26) % 26;
+    invkey[4] = ((key[0] * key[8] - key[2] * key[6]) * detA % 26 + 26) % 26;
+    invkey[5] = ((-1 * (key[0] * key[5] - key[3] * key[2])) * detA % 26 + 26) % 26;
+    invkey[6] = ((key[3] * key[7] - key[6] * key[4]) * detA % 26 + 26) % 26;
+    invkey[7] = ((-1 * (key[0] * key[7] - key[1] * key[6])) * detA % 26 + 26) % 26;
+    invkey[8] = ((key[0] * key[4] - key[1] * key[3]) * detA % 26 + 26) % 26;
+  }
+  cout<<"key: "; for(int i = 0; i < 9 ; i++){ cout<<key[i]<<' ';}cout<<endl;
+  cout<<"detA: "<<detA<<endl;
+  cout<<"invkey: "; for(int i = 0; i < 9 ; i++){ cout<<int(invkey[i])<<' ';}cout<<endl;
 }
 void key_generate(){
   srand(time(0));
@@ -32,58 +69,30 @@ void key_generate(){
   }
   if(!isInvertible()) goto tryagain;
   // cout<<"key: "; for(int i = 0; i < 9 ; i++){ cout<<key[i]<<' ';}cout<<endl;
-}
-int modInverse(int a, int m)
-{
-    a = a%m;
-    for (int x=1; x<m; x++)
-       if ((a*x) % m == 1)
-          return x;
+  keyInverse();
 
-    return -1;
 }
-void keyInverse(){
-  if(is2x2){
-    int detA = modInverse(key[0] * key[3] - key[1] * key[3], 26);
-    invkey[0] = key[3] * detA % 26;
-    invkey[1] = -1 * key[1] * detA % 26;
-    invkey[2] = -1 * key[2] * detA % 26;
-    invkey[3] = key[0] * detA % 26;
-  }
-  else{
-    int detA = modInverse(key[0]*(key[4]*key[8] - key[7]*key[5]) - key[1]*(key[3]*key[8] - key[5]*key[6]) + key[2]*(key[3]*key[7] - key[6]*key[4]), 26);
-    invkey[0] = (key[4] * key[8] - key[7] * key[5]) * detA % 26;
-    invkey[1] = (key[2] * key[7] - key[1] * key[8]) * detA % 26;
-    invkey[2] = (key[1] * key[5] - key[2] * key[4]) * detA % 26;
-    invkey[3] = -1 * (key[3] * key[8] - key[6] * key[5]) * detA % 26;
-    invkey[4] = (key[0] * key[8] - key[2] * key[6]) * detA % 26;
-    invkey[5] = -1 * (key[0] * key[5] - key[3] * key[2]) * detA % 26;
-    invkey[6] = (key[3] * key[7] - key[6] * key[4]) * detA % 26;
-    invkey[7] = -1 * (key[0] * key[7] - key[1] * key[6]) * detA % 26;
-    invkey[8] = (key[0] * key[4] - key[1] * key[3]) * detA % 26;
-  }
-  cout<<"invkey: "; for(int i = 0; i < 9 ; i++){ cout<<invkey[i]<<' ';}cout<<endl;
-}
+
 void matrixMul(int &res1, int &res2, int x1, int x2, bool useInv){
   if(useInv){
-    res1 = invkey[0] * x1 + invkey[1] * x2;
-    res2 = invkey[2] * x1 + invkey[3] * x2;
+    res1 = ((invkey[0] * x1 + invkey[1] * x2) % 26 + 26) % 26;
+    res2 = ((invkey[2] * x1 + invkey[3] * x2) % 26 + 26) % 26;
   }
   else{
-    res1 = key[0] * x1 + key[1] * x2;
-    res2 = key[2] * x1 + key[3] * x2;
+    res1 = ((key[0] * x1 + key[1] * x2) % 26 + 26) % 26;
+    res2 = ((key[2] * x1 + key[3] * x2) % 26 + 26) % 26;
   }
 }
 void matrixMul(int &res1, int &res2, int &res3, int x1, int x2, int x3, bool useInv){
   if(useInv){
-    res1 = invkey[0] * x1 + invkey[1] * x2 + invkey[2] * x3;
-    res2 = invkey[3] * x1 + invkey[4] * x2 + invkey[5] * x3;
-    res3 = invkey[6] * x1 + invkey[7] * x2 + invkey[8] * x3;
+    res1 = ((invkey[0] * x1 + invkey[1] * x2 + invkey[2] * x3) % 26 + 26) % 26;
+    res2 = ((invkey[3] * x1 + invkey[4] * x2 + invkey[5] * x3) % 26 + 26) % 26;
+    res3 = ((invkey[6] * x1 + invkey[7] * x2 + invkey[8] * x3) % 26 + 26) % 26;
   }
   else{
-    res1 = key[0] * x1 + key[1] * x2 + key[2] * x3;
-    res2 = key[3] * x1 + key[4] * x2 + key[5] * x3;
-    res3 = key[6] * x1 + key[7] * x2 + key[8] * x3;
+    res1 = ((key[0] * x1 + key[1] * x2 + key[2] * x3) % 26 + 26) % 26;
+    res2 = ((key[3] * x1 + key[4] * x2 + key[5] * x3) % 26 + 26) % 26;
+    res3 = ((key[6] * x1 + key[7] * x2 + key[8] * x3) % 26 + 26) % 26;
   }
 }
 void encrypt(){
@@ -106,33 +115,42 @@ void encrypt(){
   in >> std::noskipws;
   int count = 0;
   int res[3],inp[3];
-  while(in.get(c)){
-    step1:
-    /* if(c == '\n' || c == '\r')
-      out<<'\n';
-    else if(c == ' ')
-      out<<' ';
-    else */{
-      if(is2x2) inp[count++ % 2] = c - 'a';
-      else inp[count++ % 3] = c - 'a';
-      if(is2x2 && count%2 == 1) goto step2;
-      if(!is2x2 && count%3 == 2) goto step2;
-    }
-  }
 
-  step2:
   if(is2x2){
+  while(in.get(c)){
+    while(c == ' ') in.get(c);
+    inp[count %2] = c - 'a';
+    count++;
+    in.get(c);
+    while(c == ' ') in.get(c);
+    inp[count %2] = c - 'a';
+    count++;
+
     matrixMul(res[0],res[1],inp[0],inp[1],false);
-    out<<res[0] + 'A';
-    out<<res[1] + 'A';
+    out<<char((res[0]+26)%26 + 'A');
+    out<<char((res[1]+26)%26 + 'A');
   }
-  else{
+}
+else{
+  while(in.get(c)){
+    while(c == ' ') in.get(c);
+    inp[count %3] = c - 'a';
+    count++;
+    in.get(c);
+    while(c == ' ') in.get(c);
+    inp[count %3] = c - 'a';
+    count++;
+    in.get(c);
+    while(c == ' ') in.get(c);
+    inp[count %3] = c - 'a';
+    count++;
+
     matrixMul(res[0],res[1],res[2],inp[0],inp[1],inp[2],false);
-    out<<res[0] + 'A';
-    out<<res[1] + 'A';
-    out<<res[2] + 'A';
+    out<<char((res[0]+26)%26 + 'A');
+    out<<char((res[1]+26)%26 + 'A');
+    out<<char((res[2]+26)%26 + 'A');
   }
-  goto step1;
+}
 
   in.close();
   out.close();
@@ -140,35 +158,65 @@ void encrypt(){
 }
 
 void decrypt(){
-  // fstream out, in;
-  // string infile, outfile;
-  // cout<<"ENTER FILE TO DECRYPT: ";
-  // cin>>infile;
-  // in.open(infile);
-  // if(!in){
-  //   cout<<"ERROR: File does not exists!\n";
-  //   return;
-  // }
-  // cout<<"ENTER FILE TO SAVE OUTPUT TO: ";
-  // cin>>outfile;
-  // out.open(outfile);
-  // if(!out){
-  //   out.open(outfile, fstream::in | fstream::out | fstream::trunc);
-  // }
-  // char c;
-  // in >> std::noskipws;
-  //
-  // while(in.get(c)){
-  //   if(c == '\n' || c == '\r')
-  //     out<<'\n';
-  //   else if(c == ' ')
-  //     out<<' ';
-  //   else{
-  //       out<<find(c);
-  //   }
-  // }
-  // in.close();
-  // out.close();
+  // keyInverse();
+  fstream out, in;
+  string infile, outfile;
+  cout<<"ENTER FILE TO DECRYPT: ";
+  cin>>infile;
+  in.open(infile);
+  if(!in){
+    cout<<"ERROR: File does not exists!\n";
+    return;
+  }
+  cout<<"ENTER FILE TO SAVE OUTPUT TO: ";
+  cin>>outfile;
+  out.open(outfile);
+  if(!out){
+    out.open(outfile, fstream::in | fstream::out | fstream::trunc);
+  }
+  char c;
+  in >> std::noskipws;
+  int count = 0;
+  int res[3],inp[3];
+
+  if(is2x2){
+  while(in.get(c)){
+    while(c == ' ') in.get(c);
+    inp[count %2] = c - 'A';
+    count++;
+    in.get(c);
+    while(c == ' ') in.get(c);
+    inp[count %2] = c - 'A';
+    count++;
+
+    matrixMul(res[0],res[1],inp[0],inp[1],true);
+    out<<char((res[0]+26)%26 + 'a');
+    out<<char((res[1]+26)%26 + 'a');
+  }
+}
+else{
+  while(in.get(c)){
+    while(c == ' ') in.get(c);
+    inp[count %3] = c - 'A';
+    count++;
+    in.get(c);
+    while(c == ' ') in.get(c);
+    inp[count %3] = c - 'A';
+    count++;
+    in.get(c);
+    while(c == ' ') in.get(c);
+    inp[count %3] = c - 'A';
+    count++;
+
+    matrixMul(res[0],res[1],res[2],inp[0],inp[1],inp[2],true);
+    out<<char((res[0]+26)%26 + 'a');
+    out<<char((res[1]+26)%26 + 'a');
+    out<<char((res[2]+26)%26 + 'a');
+  }
+}
+
+  in.close();
+  out.close();
 }
 void read_key(){
   reread:
@@ -187,7 +235,7 @@ void read_key(){
     if(c == ' ' | c == '\n') continue;
     if(c > 'Z' || c < 'A'){
       cout<<"INVALID KEY!! TRY AGAIN\n";
-      cout<<c<<endl;
+      // cout<<c<<endl;
       goto reread;
     }
     key[i++] = c - 'A';
@@ -198,6 +246,8 @@ void read_key(){
       cout<<"KEY IS NOT INVERTIBLE! TRY AGAIN!!\n";
       goto reread;
     }
+    keyInverse();
+
     return;
   }
   if(i == 9){
@@ -206,6 +256,8 @@ void read_key(){
       cout<<"KEY IS NOT INVERTIBLE! TRY AGAIN!!\n";
       goto reread;
     }
+    keyInverse();
+
     return;
   }
   cout<<"INVALID KEYSIZE!! INPUT KEYSIZE OF 2x2 OR 3x3!!! TRY AGAIN\n";
@@ -222,6 +274,8 @@ void input_key(){
     is2x2 = false;
     for (int i = 0; i < 9; i++) {
       cin>>key[i];
+      // scanf("%d",&key[i]);
+
       key[i] -= 'A';
     }
   }
@@ -236,6 +290,7 @@ void input_key(){
     cout<<"KEY IS NOT INVERTIBLE! TRY AGAIN!!\n";
     goto retry;
   }
+  keyInverse();
 
 }
 void save_key(){
