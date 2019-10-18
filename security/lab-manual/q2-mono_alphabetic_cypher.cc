@@ -13,6 +13,7 @@ void key_generate(){
       int randchar = rand() % 26;
       if(takenkey[randchar] == 0){
         key[i] = randchar + 'A';
+        //marking for taken character
         takenkey[randchar] = 1;
         break;
       }
@@ -45,6 +46,7 @@ void encrypt(){
     else if(c == ' ')
       out<<' ';
     else
+      // key substitutioon
       out<<key[int(c - 'a')];
   }
   in.close();
@@ -84,6 +86,7 @@ void decrypt(){
     else if(c == ' ')
       out<<' ';
     else{
+      // key substitutioon of inv
         out<<find(c);
     }
   }

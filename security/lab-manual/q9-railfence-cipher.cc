@@ -43,14 +43,12 @@ void encrypt(){
     if((c <= 'z' && c >= 'a') || c == ' ')
     charsize++;
   }
-  // charsize--;
-  // cout<<charsize<<endl;
-  // return;
+
   in.close();
   in.open(infile);
   in >> std::noskipws;
-  // cout<<"ENTER NUMBER OF FENCES: ";
-  // cin>>number_of_rail;
+
+  // finding no of rows
   number_of_rail = ceil(charsize / float(key_size));
   char fence[number_of_rail][key_size];
   for (int i = 0; i < number_of_rail; i++) {

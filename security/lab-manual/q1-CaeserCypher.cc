@@ -32,6 +32,7 @@ void encrypt(){
     else if(c == ' ')
       out<<' ';
     else{
+      // adding the key
       char ch = (c - 'a' + key)%26;
       if(ch<0) ch = ch + 26;
       out<<char( ch + 'A');
@@ -70,6 +71,7 @@ void decrypt(){
     else if(c == ' ')
       out<<' ';
     else{
+      // subtracting the key
       char ch = (c - 'A' - key);
       while (ch<0) ch += 26;
         out<<char( ch % 26 + 'a');

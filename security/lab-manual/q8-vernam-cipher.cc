@@ -33,13 +33,14 @@ void encrypt(){
     else if(c == ' ')
       out<<' ';
     else{
-      if(read){
+      if(read){ // key is present
         k = key[i % key_size];
         i++;
       }
-      else{
+      else{ // random key is generated
         k = key[key_size++] = std::rand();
       }
+      // XOR
       out<<char( (c ^ k));
     }
   }

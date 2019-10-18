@@ -27,6 +27,7 @@ void encrypt(){
     else if(c == ' ')
       out<<' ';
     else{
+      // inflaiting caesar key
       int ch = c + key[(i++)%key_size] - 'a' - 'A';
       while(ch<0) ch+= 26;
       out<<char(ch % 26 + 'A');
@@ -60,6 +61,7 @@ void decrypt(){
     else if(c == ' ')
       out<<' ';
       else{
+        // inflaiting caesar key
         int ch = c - key[(i++)%key_size] - 'A' - 'A';
         while(ch<0) ch+= 26;
         out<<char(ch % 26 + 'a');

@@ -22,17 +22,17 @@ string encrypt_util(char c1, char c2, bool flag){
   find(c2 - 'a' + 'A',i2,j2);
   // cout<<"i2 "<<i2<<" j2 "<<j2<<endl;
 
-  if(i1 == i2){
+  if(i1 == i2){ // same row
     res += key[i1][++j1 % 5];
     if(flag) res += " ";
     res += key[i2][++j2 % 5];
   }
-  else if(j1 == j2){
+  else if(j1 == j2){ // same column
     res += key[++i1 % 5][j1];
     if(flag) res += " ";
     res += key[++i2 % 5][j2];
   }
-  else{
+  else{ // taking edges
     res += key[i1][j2];
     if(flag) res += " ";
     res += key[i2][j1];
@@ -111,12 +111,12 @@ string decrypt_util(char c1, char c2, bool flag){
   find(c2,i2,j2);
   // cout<<"i2 "<<i2<<" j2 "<<j2<<" c2: "<<c2<<" flag: "<<flag<<endl;
 
-  if(i1 == i2){
+  if(i1 == i2){ // same row
     res += key[i1][--j1 % 5] - 'A' + 'a';
     if(flag) res += " ";
     res += key[i2][--j2 % 5] - 'A' + 'a';
   }
-  else if(j1 == j2){
+  else if(j1 == j2){ // same column
     res += key[--i1 % 5][j1] - 'A' + 'a';
     if(flag) res += " ";
     res += key[--i2 % 5][j2] - 'A' + 'a';
