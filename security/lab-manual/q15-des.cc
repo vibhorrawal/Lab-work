@@ -12,7 +12,6 @@ int IP[] = {58, 50, 42, 34, 26, 18, 10, 2,
       			61, 53, 45, 37, 29, 21, 13, 5,
       			63, 55, 47, 39, 31, 23, 15, 7 };
 
-// IP Inverse
 int IP_inv[] = {40, 8, 48, 16, 56, 24, 64, 32,
         			  39, 7, 47, 15, 55, 23, 63, 31,
         			  38, 6, 46, 14, 54, 22, 62, 30,
@@ -22,38 +21,35 @@ int IP_inv[] = {40, 8, 48, 16, 56, 24, 64, 32,
         			  34, 2, 42, 10, 50, 18, 58, 26,
         			  33, 1, 41,  9, 49, 17, 57, 25 };
 
-int PC64to56[] = {57, 49, 41, 33, 25, 17, 9,
-          			   1, 58, 50, 42, 34, 26, 18,
-          			  10,  2, 59, 51, 43, 35, 27,
-          			  19, 11,  3, 60, 52, 44, 36,
-          			  63, 55, 47, 39, 31, 23, 15,
-          			   7, 62, 54, 46, 38, 30, 22,
-          			  14,  6, 61, 53, 45, 37, 29,
-          			  21, 13,  5, 28, 20, 12,  4};
+int PC_1_64to56[] =  {57, 49, 41, 33, 25, 17, 9,
+              			   1, 58, 50, 42, 34, 26, 18,
+              			  10,  2, 59, 51, 43, 35, 27,
+              			  19, 11,  3, 60, 52, 44, 36,
+              			  63, 55, 47, 39, 31, 23, 15,
+              			   7, 62, 54, 46, 38, 30, 22,
+              			  14,  6, 61, 53, 45, 37, 29,
+              			  21, 13,  5, 28, 20, 12,  4};
 
-int PC56to48[] = {14, 17, 11, 24,  1,  5,
-          			   3, 28, 15,  6, 21, 10,
-          			  23, 19, 12,  4, 26,  8,
-          			  16,  7, 27, 20, 13,  2,
-          			  41, 52, 31, 37, 47, 55,
-          			  30, 40, 51, 45, 33, 48,
-          			  44, 49, 39, 56, 34, 53,
-          			  46, 42, 50, 36, 29, 32};
+int PC_2_56to48[] =  {14, 17, 11, 24,  1,  5,
+              			   3, 28, 15,  6, 21, 10,
+              			  23, 19, 12,  4, 26,  8,
+              			  16,  7, 27, 20, 13,  2,
+              			  41, 52, 31, 37, 47, 55,
+              			  30, 40, 51, 45, 33, 48,
+              			  44, 49, 39, 56, 34, 53,
+              			  46, 42, 50, 36, 29, 32};
 
-// Left Shift Sequence
 int shiftBits[] = {1, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 1};
 
-// Expanding 32-bit ket into 48-bit (E32to48)
-int E32to48[] = {32,  1,  2,  3,  4,  5,
-    		    4,  5,  6,  7,  8,  9,
-    		    8,  9, 10, 11, 12, 13,
-    		   12, 13, 14, 15, 16, 17,
-    		   16, 17, 18, 19, 20, 21,
-    		   20, 21, 22, 23, 24, 25,
-    		   24, 25, 26, 27, 28, 29,
-    		   28, 29, 30, 31, 32,  1};
+int Exp_32to48[] =  {32,  1,  2,  3,  4,  5,
+              		    4,  5,  6,  7,  8,  9,
+              		    8,  9, 10, 11, 12, 13,
+              		   12, 13, 14, 15, 16, 17,
+              		   16, 17, 18, 19, 20, 21,
+              		   20, 21, 22, 23, 24, 25,
+              		   24, 25, 26, 27, 28, 29,
+              		   28, 29, 30, 31, 32,  1};
 
-// S-Box
 int S_BOX[8][4][16] = {
 	{
 		{14,4,13,1,2,15,11,8,3,10,6,12,5,9,0,7},
@@ -105,7 +101,6 @@ int S_BOX[8][4][16] = {
 	}
 };
 
-// Permutation (P)
 int P[] = {16,  7, 20, 21,
    29, 12, 28, 17,
     1, 15, 23, 26,
@@ -115,55 +110,48 @@ int P[] = {16,  7, 20, 21,
    19, 13, 30,  6,
    22, 11,  4, 25 };
 
-
-
-// The cryptographic function func receives 32-bit data and 48-bit subkeys to produce a 32-bit output.
-bitset<32> func(bitset<32> R, bitset<48> k)
-{
-  bitset<48> expandR;
-
-  for(int i=0; i<48; ++i)
-  expandR[47-i] = R[32-E32to48[i]];
-
-  expandR = expandR ^ k;
-
-  bitset<32> output;
-  int x = 0;
-  for(int i=0; i<48; i=i+6)
-  {
-  int row = expandR[47-i]*2 + expandR[47-i-5];
-  int col = expandR[47-i-1]*8 + expandR[47-i-2]*4 + expandR[47-i-3]*2 + expandR[47-i-4];
-  int num = S_BOX[i/6][row][col];
-  bitset<4> binary(num);
-  output[31-x] = binary[3];
-  output[31-x-1] = binary[2];
-  output[31-x-2] = binary[1];
-  output[31-x-3] = binary[0];
-  x += 4;
-  }
-
-  bitset<32> tmp = output;
-  for(int i=0; i<32; ++i)
-  output[31-i] = tmp[32-P[i]];
-  return output;
-}
-
-
-//  Left Shift
 bitset<28> leftShift(bitset<28> k, int shift)
 {
   bitset<28> tmp = k;
   for(int i=27; i>=0; --i)
   {
-  if(i-shift<0)
-  	k[i] = tmp[i-shift+28];
-  else
-  	k[i] = tmp[i-shift];
+    if(i-shift<0)
+    	k[i] = tmp[i-shift+28];
+    else
+    	k[i] = tmp[i-shift];
   }
   return k;
 }
+bitset<32> f_function(bitset<32> R, bitset<48> key)
+{
+  bitset<48> expandR;
 
-//  Generating SubKeys
+  for(int i=0; i<48; ++i)
+    expandR[47-i] = R[32-Exp_32to48[i]];
+
+  expandR = expandR ^ key;
+
+  bitset<32> output;
+  int x = 0;
+  for(int i=0; i<48; i=i+6)
+  {
+    int row = expandR[47-i]*2 + expandR[47-i-5];
+    int col = expandR[47-i-1]*8 + expandR[47-i-2]*4 + expandR[47-i-3]*2 + expandR[47-i-4];
+    int num = S_BOX[i/6][row][col];
+    bitset<4> binary(num);
+    output[31-x] = binary[3];
+    output[31-x-1] = binary[2];
+    output[31-x-2] = binary[1];
+    output[31-x-3] = binary[0];
+    x += 4;
+  }
+
+  bitset<32> tmp = output;
+  for(int i=0; i<32; ++i)
+    output[31-i] = tmp[32-P[i]];
+  return output;
+}
+
 void generateKeys()
 {
   bitset<56> realKey;
@@ -172,9 +160,9 @@ void generateKeys()
   bitset<48> compressKey;
 
   for (int i=0; i<56; ++i)
-    realKey[55-i] = key[64 - PC64to56[i]];
+    realKey[55-i] = key[64 - PC_1_64to56[i]];
 
-  for(int round=0; round<16; ++round)
+  for(int round=0; round<16; round++)
   {
 
     for(int i=28; i<56; ++i)
@@ -190,7 +178,7 @@ void generateKeys()
     for(int i=0; i<28; ++i)
     	realKey[i] = right[i];
     for(int i=0; i<48; ++i)
-    	compressKey[47-i] = realKey[56 - PC56to48[i]];
+    	compressKey[47-i] = realKey[56 - PC_2_56to48[i]];
     subKey[round] = compressKey;
   }
 }
@@ -206,16 +194,16 @@ bitset<64> charToBitset(const char s[8])
 }
 
 //  DES Encryption
-bitset<64> encrypt(bitset<64>& plain)
+bitset<64> encrypt(bitset<64>& plainText)
 {
-  bitset<64> cipher;
+  bitset<64> cipherText;
   bitset<64> currentBits;
   bitset<32> left;
   bitset<32> right;
   bitset<32> newLeft;
 
   for(int i=0; i<64; ++i)
-    currentBits[63-i] = plain[64-IP[i]];
+    currentBits[63-i] = plainText[64-IP[i]];
 
   for(int i=32; i<64; ++i)
     left[i-32] = currentBits[i];
@@ -225,33 +213,33 @@ bitset<64> encrypt(bitset<64>& plain)
   for(int round=0; round<16; ++round)
   {
     newLeft = right;
-    right = left ^ func(right,subKey[round]);
+    right = left ^ f_function(right,subKey[round]);
     left = newLeft;
   }
 
   for(int i=0; i<32; ++i)
-    cipher[i] = left[i];
+    cipherText[i] = left[i];
   for(int i=32; i<64; ++i)
-    cipher[i] = right[i-32];
+    cipherText[i] = right[i-32];
 
-  currentBits = cipher;
+  currentBits = cipherText;
   for(int i=0; i<64; ++i)
-    cipher[63-i] = currentBits[64-IP_inv[i]];
+    cipherText[63-i] = currentBits[64-IP_inv[i]];
 
-  return cipher;
+  return cipherText;
 }
 
 //  DES Decryption
-bitset<64> decrypt(bitset<64>& cipher)
+bitset<64> decrypt(bitset<64>& cipherText)
 {
-  bitset<64> plain;
+  bitset<64> plainText;
   bitset<64> currentBits;
   bitset<32> left;
   bitset<32> right;
   bitset<32> newLeft;
 
   for(int i=0; i<64; ++i)
-    currentBits[63-i] = cipher[64-IP[i]];
+    currentBits[63-i] = cipherText[64-IP[i]];
 
   for(int i=32; i<64; ++i)
     left[i-32] = currentBits[i];
@@ -261,29 +249,29 @@ bitset<64> decrypt(bitset<64>& cipher)
   for(int round=0; round<16; ++round)
   {
     newLeft = right;
-    right = left ^ func(right,subKey[15-round]);
+    right = left ^ f_function(right,subKey[15-round]);
     left = newLeft;
   }
 
   for(int i=0; i<32; ++i)
-    plain[i] = left[i];
+    plainText[i] = left[i];
   for(int i=32; i<64; ++i)
-    plain[i] = right[i-32];
+    plainText[i] = right[i-32];
 
-  currentBits = plain;
+  currentBits = plainText;
   for(int i=0; i<64; ++i)
-    plain[63-i] = currentBits[64-IP_inv[i]];
+    plainText[63-i] = currentBits[64-IP_inv[i]];
 
-  return plain;
+  return plainText;
 }
 
-void encrypt(string file, string ofile, string key_org)
+void encrypt(string file, string ofile, string keyFile)
 {
   string k;
-  ifstream kk;
-  kk.open(key_org.c_str());
-  while(kk)
-  getline(kk, k);
+  ifstream keyFileHandler;
+  keyFileHandler.open(keyFile.c_str());
+  while(keyFileHandler)
+    getline(keyFileHandler, k);
   key = charToBitset(k.c_str());
   generateKeys();
 
@@ -291,24 +279,24 @@ void encrypt(string file, string ofile, string key_org)
   ofstream out;
   in.open(file.c_str());
   out.open(ofile.c_str());
-  bitset<64> plain;
-  while(in.read((char*)&plain, sizeof(plain)))
+  bitset<64> plainText;
+  while(in.read((char*)&plainText, sizeof(plainText)))
   {
-    bitset<64> cipher  = encrypt(plain);
-    out.write((char*)&cipher, sizeof(cipher));
-    plain.reset();
+    bitset<64> cipherText  = encrypt(plainText);
+    out.write((char*)&cipherText, sizeof(cipherText));
+    plainText.reset();
   }
   in.close();
   out.close();
 }
 
-void decrypt(string file, string ofile, string key_org)
+void decrypt(string file, string ofile, string keyFile)
 {
   string k;
-  ifstream kk;
-  kk.open(key_org.c_str());
-  while(kk)
-    getline(kk, k);
+  ifstream keyFileHandler;
+  keyFileHandler.open(keyFile.c_str());
+  while(keyFileHandler)
+    getline(keyFileHandler, k);
   key = charToBitset(k.c_str());
   generateKeys();
 
@@ -316,12 +304,12 @@ void decrypt(string file, string ofile, string key_org)
   ofstream out;
   in.open(file.c_str());
   out.open(ofile.c_str());
-  bitset<64> plain;
-  while(in.read((char*)&plain, sizeof(plain)))
+  bitset<64> plainText;
+  while(in.read((char*)&plainText, sizeof(plainText)))
   {
-    bitset<64> temp  = decrypt(plain);
+    bitset<64> temp  = decrypt(plainText);
     out.write((char*)&temp, sizeof(temp));
-    plain.reset();
+    plainText.reset();
   }
   in.close();
   out.close();

@@ -67,7 +67,7 @@ void encryptUtil(FILE *fp1, FILE *fp2, FILE *fp3)
 		printf("\n*** Failed Encrypting ***\n");
 }
 
-void secret_text(FILE *fp2, char *a)
+void secretText(FILE *fp2, char *a)
 {
     int i = 0;
 	while (a[i] != '\0')
@@ -179,7 +179,7 @@ int encrypt()
     fprintf(stderr, "Cannot create output file secret.txt\n");
 		exit(1);
     }
-    secret_text(secret, msg);
+    secretText(secret, msg);
 
     op = fopen("img-secret-in-c.bmp", "w+");
   	if (op == NULL)

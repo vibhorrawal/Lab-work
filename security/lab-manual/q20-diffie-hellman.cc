@@ -11,13 +11,7 @@ ll powerMod(ll t, ll e, int N){
   if(e==1) return t;
   return (t*powerMod(t,e-1,N) % N) % N;
 }
-bool check(vi v, int q)
-{
-    for(int i = 0; i < q-1; i++)
-        if(v[i] != i+1)
-            return false;
-    return true;
-}
+
 bool isPrime(int a)
 {
     if (a == 2)
@@ -42,6 +36,14 @@ vi generatePrime(int n)
     }
     return v;
 }
+bool checkPrimeRoot(vi v, int q)
+{
+    for(int i = 0; i < q-1; i++)
+        if(v[i] != i+1)
+            return false;
+    return true;
+}
+
 int primeRoot(int q){
   for (int i = 1; i < q; i++) {
     vi v;
@@ -49,7 +51,7 @@ int primeRoot(int q){
         v.push_back(powerMod(i,j,q));
     }
     sort(v.begin(),v.end());
-    if(check(v,q)) return i;
+    if(checkPrimeRoot(v,q)) return i;
   }
 }
 void keyGeneration(){
@@ -62,7 +64,8 @@ void keyGeneration(){
   int Yb = powerMod(alpha, Xb, q) % q;
   int Ka = powerMod(Yb, Xa, q) % q;
   int Kb = powerMod(Ya, Xb, q) % q;
-  cout << "q: "<<q<<"\nalpha: "<<alpha<<"\nXa: "<<Xa<<"\nXb: "<<Xb<<"\nYa: "<<Ya<<"\nYb: "<<Yb<<"\nKa: "<<Ka<<"\nKb: "<<Kb<< endl;
+  cout << "q: "<<q<<"\nalpha: "<<alpha<<"\nXa: "<<Xa<<"\nXb: "<<Xb<<"\nYa: "
+  <<Ya<<"\nYb: "<<Yb<<"\nKa: "<<Ka<<"\nKb: "<<Kb<< endl;
 }
 int main(int argc, char const *argv[]){
   while(1){
