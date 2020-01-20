@@ -1,0 +1,32 @@
+digraph Tree {
+node [shape=box] ;
+0 [label="median_income <= 5.029\nmse = 13307217967.192\nsamples = 16512\nvalue = 207044.644"] ;
+1 [label="median_income <= 3.13\nmse = 8337214327.72\nsamples = 12978\nvalue = 173510.523"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="median_income <= 2.418\nmse = 5691913925.692\nsamples = 6521\nvalue = 137107.09"] ;
+1 -> 2 ;
+3 [label="mse = 5051803542.743\nsamples = 3550\nvalue = 119885.695"] ;
+2 -> 3 ;
+4 [label="mse = 5678960782.055\nsamples = 2971\nvalue = 157684.658"] ;
+2 -> 4 ;
+5 [label="housing_median_age <= 38.5\nmse = 8318778854.566\nsamples = 6457\nvalue = 210274.776"] ;
+1 -> 5 ;
+6 [label="mse = 6845455834.988\nsamples = 5136\nvalue = 197571.995"] ;
+5 -> 6 ;
+7 [label="mse = 10980471250.57\nsamples = 1321\nvalue = 259662.727"] ;
+5 -> 7 ;
+8 [label="median_income <= 6.868\nmse = 12263538200.051\nsamples = 3534\nvalue = 330192.871"] ;
+0 -> 8 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+9 [label="housing_median_age <= 36.5\nmse = 8863673577.791\nsamples = 2497\nvalue = 290956.724"] ;
+8 -> 9 ;
+10 [label="mse = 7661991597.316\nsamples = 2080\nvalue = 277607.154"] ;
+9 -> 10 ;
+11 [label="mse = 9534823882.667\nsamples = 417\nvalue = 357544.506"] ;
+9 -> 11 ;
+12 [label="median_income <= 7.815\nmse = 7817278513.645\nsamples = 1037\nvalue = 424669.879"] ;
+8 -> 12 ;
+13 [label="mse = 7880316856.965\nsamples = 397\nvalue = 370941.992"] ;
+12 -> 13 ;
+14 [label="mse = 4876766818.327\nsamples = 640\nvalue = 457997.959"] ;
+12 -> 14 ;
+}
